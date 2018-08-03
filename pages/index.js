@@ -1,24 +1,21 @@
-import Link from 'next/link';
-import Layout from '../components/MyLayout';
+import Layout from '../components/MyLayout.js'
+import Link from 'next/link'
 
-const Index = () => (
-    <Layout>
-        <p>Hello Next.js</p>
-        <div>
-            <Link href="/about" replace>
-                <button>About Page Link with replace</button>
-            </Link>
-        </div>
-        <div>
-            <h2>Link Works With Anything</h2>
-            <p>
-                Just like a button, you can place any of your custom React components or even a div within a Link.
-            </p>
-            <p>
-                The only requirement for components placed inside a Link is they should accept an onClick prop.
-            </p>
-        </div>
-    </Layout>
-);
+const PostLink = (props) => (
+  <li>
+    <Link href={`/post?title=${props.title}`}>
+      <a>{props.title}</a>
+    </Link>
+  </li>
+)
 
-export default Index;
+export default () => (
+  <Layout>
+    <h1>My Blog</h1>
+    <ul>
+      <PostLink title="Hello Next.js"/>
+      <PostLink title="Learn Next.js is awesome"/>
+      <PostLink title="Deploy apps with Zeit"/>
+    </ul>
+  </Layout>
+)
