@@ -1,12 +1,8 @@
 import Link from 'next/link';
+import Layout from '../components/MyLayout';
 
 const Index = () => (
-    <div>
-        <div>
-            <Link href="/about">
-                <a style={{ fontSize: 30 }}>About Page</a>
-            </Link>
-        </div>
+    <Layout>
         <p>Hello Next.js</p>
         <div>
             <Link href="/about" replace>
@@ -22,7 +18,7 @@ const Index = () => (
                 The only requirement for components placed inside a Link is they should accept an onClick prop.
             </p>
         </div>
-    </div>
+    </Layout>
 );
 
 export default Index;
